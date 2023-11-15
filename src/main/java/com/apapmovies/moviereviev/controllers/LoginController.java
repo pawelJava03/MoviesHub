@@ -31,8 +31,6 @@ public class LoginController {
         if (result.hasErrors()) {
             return "login";
         }
-
-        // Sprawdzenie, czy użytkownik istnieje w bazie danych
         User existingUser = userRepository.findByUsername(user.getUsername());
 
         if (existingUser == null || !existingUser.getPassword().equals(user.getPassword())) {

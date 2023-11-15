@@ -17,6 +17,7 @@ public class Movie {
     private double rating;
     private String review;
     private String title;
+    private String added_by;
 
     public Movie(int movie_id, double rating, String review, String title) {
         this.movie_id = movie_id;
