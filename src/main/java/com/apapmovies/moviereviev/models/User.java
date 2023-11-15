@@ -1,7 +1,11 @@
 package com.apapmovies.moviereviev.models;
 
+
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import java.util.List;
 
@@ -9,21 +13,27 @@ import java.util.List;
 @Table(name = "users")
 @Getter
 @Setter
-//@AllArgsConstructor
 @NoArgsConstructor
 @ToString
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id = null;
+
+    @Column(name = "username", unique = true)
     private String username;
+
     private String password;
     private String email;
-    public User(int id, String username,  String password, String email) {
-        this.id = id;
+    private String nickname;
+
+//    @ElementCollection
+//    private List<String> roles;
+
+    public User(String username, String password, String email, String nickname) {
         this.username = username;
         this.password = password;
         this.email = email;
+        this.nickname = nickname;
     }
-
 }

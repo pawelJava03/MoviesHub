@@ -17,9 +17,9 @@
   <tbody>
   <tr th:each="movieReview : ${movieReviews}">
     <td th:text="${movieReview.title}"></td>
-    <td th:number="${movieReview.rating}"></td>
+    <td th:text="${movieReview.rating}"></td>
     <td th:text="${movieReview.review}"></td>
-    <td th:text="${movieReview.nickname}"></td>
+    <td th:text="${movieReview.addedby}"></td>
   </tr>
   </tbody>
 </table>

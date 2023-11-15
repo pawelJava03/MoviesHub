@@ -9,5 +9,8 @@ import java.util.List;
 
 @Repository
 public interface MovieRepository extends JpaRepository<Movie, Long> {
+
+    @Query("SELECT m FROM Movie m WHERE m.addedby = :nickname")
+    List findAllByAddedby(String nickname);
 }
 

@@ -1,30 +1,38 @@
 package com.apapmovies.moviereviev.models;
 
+
 import jakarta.persistence.*;
 import lombok.*;
 
+
+
 @Entity
-@Table(name = "movie")
+@Table(name = "movies")
 @Getter
 @Setter
 @NoArgsConstructor
-//@AllArgsConstructor
+//@AllArgsConstructord
 @ToString
 public class Movie {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int movie_id;
+    private int id;
+    @Column(name = "rating")
     private double rating;
+    @Column(name = "review")
     private String review;
+    @Column(name = "title")
     private String title;
+    @Column(name = "addedby")
+    private String addedby;
 
-    private String nickname;
 
-    public Movie(int movie_id, double rating, String review, String title, String nickname) {
-        this.movie_id = movie_id;
+    public Movie(int id, double rating, String review, String title, String addedby) {
+        this.id = id;
         this.rating = rating;
         this.review = review;
         this.title = title;
-        this.nickname = nickname;
+        this.addedby = addedby;
     }
 }

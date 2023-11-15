@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Reviews</title>
+</head>
+<body>
+<h1>Your Reviews</h1>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Rating</th>
+        <th>Review</th>
+        <th>Added By</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="allByNicknames: ${allByNickname}">
+        <td th:text="${allByNicknames.title}"></td>
+        <td th:text="${allByNicknames.rating}"></td>
+        <td th:text="${allByNicknames.review}"></td>
+        <td th:text="${allByNicknames.addedby}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<a href="/moviehub">Back to the movieHub</a>
+
+</body>
+</html>

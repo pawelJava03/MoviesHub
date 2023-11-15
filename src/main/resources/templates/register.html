@@ -26,6 +26,10 @@
     <input type="password" th:field="*{password}" />
     <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password error</span>
 
+    <label for="nickname">Nickname:</label>
+    <input type="text" th:field="*{nickname}" />
+    <span th:if="${#fields.hasErrors('nickname')}" th:errors="*{nickname}">Nickname error</span>
+
     <button type="submit">Register</button>
 </form>
 
