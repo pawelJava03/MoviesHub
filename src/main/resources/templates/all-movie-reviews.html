@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Movies Reviews</title>
+  <meta charset="UTF-8">
+  <title>Movies Reviews</title>
 </head>
 <body>
 <table border="1">
@@ -11,15 +11,15 @@
     <th>Title</th>
     <th>Rating</th>
     <th>Review</th>
-    <th>Added By</th>
+    <th>Added By:</th>
   </tr>
   </thead>
   <tbody>
-  <!-- Iterujemy przez listę recenzji filmów -->
   <tr th:each="movieReview : ${movieReviews}">
     <td th:text="${movieReview.title}"></td>
-    <td th:text="${movieReview.rating}"></td>
+    <td th:number="${movieReview.rating}"></td>
     <td th:text="${movieReview.review}"></td>
+    <td th:text="${movieReview.nickname}"></td>
   </tr>
   </tbody>
 </table>

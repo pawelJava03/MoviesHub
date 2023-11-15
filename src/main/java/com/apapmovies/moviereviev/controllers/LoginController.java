@@ -34,12 +34,10 @@ public class LoginController {
         User existingUser = userRepository.findByUsername(user.getUsername());
 
         if (existingUser == null || !existingUser.getPassword().equals(user.getPassword())) {
-            // Błędne dane logowania
             result.rejectValue("username", "error.user", "Invalid username or password");
             return "redirect:/usernotfound";
         }
 
-        // Przekierowanie po poprawnym uwierzytelnieniu
         redirectAttributes.addFlashAttribute("username", existingUser.getUsername());
         return "redirect:/home-site";
     }

@@ -1,6 +1,8 @@
 package com.apapmovies.moviereviev.controllers;
 
 import com.apapmovies.moviereviev.models.User;
+import com.apapmovies.moviereviev.models.Movie;
+import com.apapmovies.moviereviev.repositories.MovieRepository;
 import com.apapmovies.moviereviev.repositories.UserRepository;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
@@ -14,9 +16,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class RegisterController {
 
     private final UserRepository userRepository;
+    private final MovieRepository movieRepository;
 
-    public RegisterController(UserRepository userRepository) {
+    public RegisterController(UserRepository userRepository, MovieRepository movieRepository) {
         this.userRepository = userRepository;
+        this.movieRepository = movieRepository;
     }
 
     @GetMapping("/register")
@@ -26,11 +30,17 @@ public class RegisterController {
     }
 
     @PostMapping("/register")
-    public String processRegistration(@ModelAttribute("user") @Valid User user, BindingResult result) {
+    public String processRegistration(@ModelAttribute("user") @Valid User user, BindingResult result, Model model) {
         if (result.hasErrors()) {
+            return "register";
+        }
+
+        if (userRepository.existsByUsername(user.getUsername())) {
+            model.addAttribute("usernameError", "Username is already taken. Choose another one.");
             return "register";
         }
         userRepository.save(user);
         return "redirect:/login";
     }
+
 }

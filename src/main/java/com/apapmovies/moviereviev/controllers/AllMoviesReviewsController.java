@@ -23,6 +23,7 @@ public class AllMoviesReviewsController {
     @GetMapping("/moviehub-all-reviews")
     public String showAllMovieReviews(Model model) {
         List<Movie> movieReviews = movieRepository.findAll();
+
         model.addAttribute("movieReviews", movieReviews);
         return "all-movie-reviews";
     }

@@ -1,7 +1,6 @@
 package com.apapmovies.moviereviev.controllers;
 
 import com.apapmovies.moviereviev.models.Movie;
-import com.apapmovies.moviereviev.models.User;
 import com.apapmovies.moviereviev.repositories.MovieRepository;
 import com.apapmovies.moviereviev.repositories.UserRepository;
 import jakarta.validation.Valid;
@@ -12,8 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.security.Principal;
-
 @Controller
 public class AddMovieReviewController {
 
@@ -21,26 +18,28 @@ public class AddMovieReviewController {
     private final UserRepository userRepository;
 
     public AddMovieReviewController(MovieRepository movieRepository,
-                                    UserRepository userRepository){
+                                    UserRepository userRepository) {
         this.movieRepository = movieRepository;
         this.userRepository = userRepository;
     }
 
     @GetMapping("/movie-review")
-    public String movieReviewForm(Model model){
+    public String movieReviewForm(Model model) {
         model.addAttribute("movie", new Movie());
         return "add_movie";
     }
 
+
+
     @PostMapping("/movie-review")
-    public String processAddMovieReview(@ModelAttribute("movie") @Valid Movie movie, BindingResult result){
-
-
-        if(result.hasErrors()){
+    public String processAddMovieReview(@ModelAttribute("movie") @Valid Movie movie, BindingResult result) {
+        if (result.hasErrors()) {
             return "add_movie";
         }
         movieRepository.save(movie);
         return "redirect:/moviehub-all-reviews";
     }
+
+
 
 }
