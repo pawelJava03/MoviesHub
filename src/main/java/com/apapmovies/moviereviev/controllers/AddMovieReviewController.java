@@ -48,7 +48,6 @@ public class AddMovieReviewController {
             return "add_movie";
         }
 
-        // Zapisz recenzję
         movieRepository.save(movie);
 
         return "redirect:/moviehub-all-reviews";
