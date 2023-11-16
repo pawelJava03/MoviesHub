@@ -25,6 +25,8 @@ public class User {
 
     private String password;
     private String email;
+
+    @Column(unique = true)
     private String nickname;
 
 //    @ElementCollection

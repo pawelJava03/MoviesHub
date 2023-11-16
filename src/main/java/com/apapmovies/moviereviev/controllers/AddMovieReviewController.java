@@ -34,8 +34,8 @@ public class AddMovieReviewController {
         String username = (String) session.getAttribute("username");
 
         if (username != null) {
-            model.addAttribute("welcomeMessage", "Hi, " + username+". Welcome at MovieHub");
-            return "moviehub";
+            model.addAttribute("movie", new Movie());
+            return "add_movie";
         } else {
             return "redirect:/login";
         }
@@ -50,6 +50,6 @@ public class AddMovieReviewController {
 
         movieRepository.save(movie);
 
-        return "redirect:/moviehub-all-reviews";
+        return "redirect:/moviehub/users-reviews";
     }
 }

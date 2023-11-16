@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <link rel="stylesheet" type="text/css" href="global.css">
     <meta charset="UTF-8">
     <title>MovieHub</title>
 </head>
@@ -8,11 +9,11 @@
 <h1>MovieHub</h1>
 <p th:text="${welcomeMessage}"></p>
 
-<h2>Add review</h2>
-<a th:href="/"></a>
+<p>Add review <a th:href="@{/movie-review}">there </a></p>
 
-<p> Yours reviews:</p>
-<a th:href="@{/moviehub/users-reviews}">Here</a>
+
+<p> Yours reviews:<a th:href="@{/moviehub/users-reviews}">Click Here!</a></p>
+
 <br>
 
 

@@ -2,6 +2,8 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="global.css">
+
     <title>Your Reviews</title>
 </head>
 <body>
@@ -22,11 +24,13 @@
         <td th:text="${allByNicknames.rating}"></td>
         <td th:text="${allByNicknames.review}"></td>
         <td th:text="${allByNicknames.addedby}"></td>
+        <td th:text="${allByNicknames.date}"></td>
     </tr>
     </tbody>
 </table>
 
-<a href="/moviehub">Back to the movieHub</a>
+<button type="button" onclick="window.location.href='/moviehub'">Back to MovieHub</button>
+
 
 </body>
 </html>

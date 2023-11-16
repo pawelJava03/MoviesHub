@@ -4,6 +4,8 @@ package com.apapmovies.moviereviev.models;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
+import java.util.Date;
 
 
 @Entity
@@ -26,6 +28,8 @@ public class Movie {
     private String title;
     @Column(name = "addedby")
     private String addedby;
+    @Column(name = "date")
+    private LocalDate date;
 
 
     public Movie(int id, double rating, String review, String title, String addedby) {

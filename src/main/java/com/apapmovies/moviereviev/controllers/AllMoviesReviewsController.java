@@ -22,7 +22,6 @@ public class AllMoviesReviewsController {
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         if (username != null) {
-            model.addAttribute("welcomeMessage", "Hi, " + username + ". Welcome at MovieHub");
             List<Movie> movieReviews = movieRepository.findAll();
             model.addAttribute("movieReviews", movieReviews);
             return "all-movie-reviews";

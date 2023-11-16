@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+  <link rel="stylesheet" type="text/css" href="global.css">
   <meta charset="UTF-8">
   <title>Movies Reviews</title>
 </head>
@@ -20,6 +21,7 @@
     <td th:text="${movieReview.rating}"></td>
     <td th:text="${movieReview.review}"></td>
     <td th:text="${movieReview.addedby}"></td>
+    <td th:text="${movieReview.date}"></td>
   </tr>
   </tbody>
 </table>

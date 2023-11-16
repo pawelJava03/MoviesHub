@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <link rel="stylesheet" type="text/css" href="global.css">
     <meta charset="UTF-8">
     <title>Add Movie Review</title>
 </head>
@@ -20,13 +21,22 @@
     <label for="review">Review:</label>
     <textarea id="review" name="review" th:field="*{review}" required></textarea>
     <br>
-    <label for="nickname">Yours nickname:</label>
+    <label for="nickname">2ndAuth - Yours nickname:</label>
     <input type="text" id="nickname" name="nickname" th:field="*{addedby}">
+    <br>
+    <label for="date">date</label>
+    <input type="date" id="date" name="nickname" th:field="*{date}">
     <br>
 
 
     <button type="submit">Submit Review</button>
 </form>
+
+<form>
+    <button type="button" onclick="window.location.href='/moviehub'">Back to MovieHub</button>
+</form>
+
+
 
 </body>
 </html>

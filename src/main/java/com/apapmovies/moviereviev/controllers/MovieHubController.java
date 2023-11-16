@@ -45,11 +45,11 @@ public class MovieHubController {
 
         User user = userRepository.findByUsername(username);
         String nickname = user.getNickname();
-
         List<Movie> allByNickname = movieRepository.findAllByAddedby(nickname);
-
-        model.addAttribute("allByNickname",allByNickname);
-        return "users_reviews";
+        if (allByNickname.size() > 0) {
+            model.addAttribute("allByNickname", allByNickname);
+            return "users_reviews";
+        }else return "empty_user_reviews";
     }
 
 }
