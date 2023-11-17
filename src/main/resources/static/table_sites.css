@@ -1,0 +1,46 @@
+body {
+    background-color: #121212; /* Ciemne tło */
+    color: #ffffff; /* Biały tekst */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: #333; /* Ciemny kolor nagłówka */
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #555; /* Ciemny kolor obramowania */
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #444; /* Ciemniejszy kolor nagłówka tabeli */
+    color: #ffffff;
+}
+
+tr:nth-child(even) {
+    background-color: #222; /* Ciemniejszy kolor co drugiego wiersza */
+}
+
+button {
+    background-color: #333; /* Ciemny kolor przycisku */
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555; /* Kolor przycisku po najechaniu myszką */
+}

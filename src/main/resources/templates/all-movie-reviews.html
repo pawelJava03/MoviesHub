@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <link rel="stylesheet" type="text/css" href="global.css">
+  <link rel="stylesheet" type="text/css" href="table_sites.css">
   <meta charset="UTF-8">
   <title>Movies Reviews</title>
 </head>
 <body>
-<table border="1">
+<table>
   <thead>
   <tr>
     <th>Title</th>
+    <th>Date of movie</th>
     <th>Rating</th>
     <th>Review</th>
-    <th>Added By:</th>
+    <th>Added By</th>
   </tr>
   </thead>
   <tbody>
   <tr th:each="movieReview : ${movieReviews}">
     <td th:text="${movieReview.title}"></td>
+    <td th:text="${movieReview.date}"></td>
     <td th:text="${movieReview.rating}"></td>
     <td th:text="${movieReview.review}"></td>
     <td th:text="${movieReview.addedby}"></td>
-    <td th:text="${movieReview.date}"></td>
   </tr>
   </tbody>
 </table>

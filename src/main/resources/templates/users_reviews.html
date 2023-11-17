@@ -2,17 +2,16 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="global.css">
-
     <title>Your Reviews</title>
 </head>
 <body>
-<h1>Your Reviews</h1>
+<header>Yours reviews</header>
 
-<table border="1">
+<table>
     <thead>
     <tr>
         <th>Title</th>
+        <th>Date of movie</th>
         <th>Rating</th>
         <th>Review</th>
         <th>Added By</th>
@@ -21,10 +20,10 @@
     <tbody>
     <tr th:each="allByNicknames: ${allByNickname}">
         <td th:text="${allByNicknames.title}"></td>
+        <td th:text="${allByNicknames.date}"></td>
         <td th:text="${allByNicknames.rating}"></td>
         <td th:text="${allByNicknames.review}"></td>
         <td th:text="${allByNicknames.addedby}"></td>
-        <td th:text="${allByNicknames.date}"></td>
     </tr>
     </tbody>
 </table>

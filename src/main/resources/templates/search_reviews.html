@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Reviews</title>
+    <link rel="stylesheet" type="text/css" href="search.css">
+</head>
+<body>
+<h1>Search Reviews by Title</h1>
+
+<form action="/moviehub/search" method="GET">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" required>
+    <button type="submit">Search</button>
+</form>
+
+<div th:if="${noResults}">
+    <p>No reviews found for the given title.</p>
+</div>
+
+<div th:if="${movies}">
+    <table>
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Rating</th>
+            <th>Review</th>
+            <th>Added by</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="movie : ${movies}">
+            <td th:text="${movie.title}"></td>
+            <td th:text="${movie.date}"></td>
+            <td th:text="${movie.rating}"></td>
+            <td th:text="${movie.review}"></td>
+            <td th:text="${movie.addedby}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<a th:href="@{/moviehub}">Back to MovieHub</a>
+</body>
+</html>

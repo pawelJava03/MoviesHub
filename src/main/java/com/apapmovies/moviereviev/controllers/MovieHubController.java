@@ -6,6 +6,7 @@ import com.apapmovies.moviereviev.repositories.MovieRepository;
 import com.apapmovies.moviereviev.repositories.UserRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,14 +43,34 @@ public class MovieHubController {
     public String returnMoviesListByNickname(HttpServletRequest request, Model model){
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
-
-        User user = userRepository.findByUsername(username);
-        String nickname = user.getNickname();
-        List<Movie> allByNickname = movieRepository.findAllByAddedby(nickname);
-        if (allByNickname.size() > 0) {
-            model.addAttribute("allByNickname", allByNickname);
-            return "users_reviews";
-        }else return "empty_user_reviews";
+        if (username != null) {
+            User user = userRepository.findByUsername(username);
+            String nickname = user.getNickname();
+            List<Movie> allByNickname = movieRepository.findAllByAddedby(nickname);
+            if (allByNickname.size() > 0) {
+                model.addAttribute("allByNickname", allByNickname);
+                return "users_reviews";
+            } else return "empty_user_reviews";
+        }
+        return "redirect:/login";
     }
+
+    @GetMapping("/moviehub/search")
+    public String searchReviewByTitle(HttpServletRequest request, Model model, @Param("title")String title){
+        HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("username");
+        if (username != null) {
+
+            List<Movie> byTitle = movieRepository.findByTitle(title);
+            if (byTitle.isEmpty()) {
+                model.addAttribute("noResults", true);
+            } else {
+                model.addAttribute("movies", byTitle);
+            }
+
+            return "search_reviews";
+        }return "redirect:/login";
+    }
+
 
 }

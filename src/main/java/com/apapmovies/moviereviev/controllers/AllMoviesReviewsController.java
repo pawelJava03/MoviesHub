@@ -26,6 +26,6 @@ public class AllMoviesReviewsController {
             model.addAttribute("movieReviews", movieReviews);
             return "all-movie-reviews";
         }
-        return "/session_error";
+        return "/login";
     }
 }
