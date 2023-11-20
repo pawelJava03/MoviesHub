@@ -1,7 +1,6 @@
 package com.apapmovies.moviereviev.controllers;
 
 import com.apapmovies.moviereviev.models.Movie;
-import com.apapmovies.moviereviev.models.User;
 import com.apapmovies.moviereviev.repositories.MovieRepository;
 import com.apapmovies.moviereviev.repositories.UserRepository;
 import jakarta.servlet.http.HttpServletRequest;
@@ -14,8 +13,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
-import java.util.Optional;
-
 @Controller
 public class AddMovieReviewController {
 
@@ -47,9 +44,7 @@ public class AddMovieReviewController {
         if (result.hasErrors()) {
             return "add_movie";
         }
-
         movieRepository.save(movie);
-
         return "redirect:/moviehub/users-reviews";
     }
 }

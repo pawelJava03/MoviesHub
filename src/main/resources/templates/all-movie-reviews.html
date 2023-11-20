@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <link rel="stylesheet" type="text/css" href="table_sites.css">
   <meta charset="UTF-8">
   <title>Movies Reviews</title>
+  <style>
+    /* Dodaj swoje style CSS tutaj */
+    body {
+      background-color: #f4f4f4;
+      color: #333;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .reviews-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    .reviews-table th, .reviews-table td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    .button {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .back-button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-<table>
+<table class="reviews-table">
   <thead>
   <tr>
     <th>Title</th>

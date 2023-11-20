@@ -14,7 +14,7 @@ public interface MovieRepository extends JpaRepository<Movie, Long> {
     @Query("SELECT m FROM Movie m WHERE m.addedby = :nickname")
     List findAllByAddedby(String nickname);
 
-    @Query("SELECT m FROM Movie m WHERE LOWER(m.title) LIKE %:titlePattern%")
+    @Query("SELECT m FROM Movie m WHERE LOWER(m.title) LIKE CONCAT('%', LOWER(:titlePattern), '%')")
     List<Movie> findByTitle(@Param("titlePattern") String titlePattern);
 }
 

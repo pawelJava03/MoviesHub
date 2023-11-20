@@ -60,14 +60,12 @@ public class MovieHubController {
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         if (username != null) {
-
             List<Movie> byTitle = movieRepository.findByTitle(title);
             if (byTitle.isEmpty()) {
                 model.addAttribute("noResults", true);
             } else {
                 model.addAttribute("movies", byTitle);
             }
-
             return "search_reviews";
         }return "redirect:/login";
     }

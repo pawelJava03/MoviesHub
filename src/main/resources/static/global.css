@@ -1,105 +1,164 @@
-/* Resetowanie domyślnych stylów przeglądarki */
-body, h1, h2, h3, p, ul, ol, li {
-    margin: 0;
-    padding: 0;
-}
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #1e1e1e;
-    color: #fff;
-    line-height: 1.6;
+    background-color: #f8f8f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
+/* Common styling for forms */
+form {
+    max-width: 400px;
+    margin: auto;
 }
 
-/* Nagłówki */
-h1, h2, h3 {
-    color: #61dafb;
-}
-
-/* Linki */
-a {
-    color: #61dafb;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Przyciski */
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 10px 0;
-    font-size: 16px;
-    font-weight: bold;
+h1, h2, h4 {
     text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #fff;
-    background-color: #61dafb;
-    border: 2px solid #61dafb;
+    color: #333;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+/* Registration Page */
+.register-form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register-form label {
+    display: block;
+    margin: 10px 0;
+    color: #555;
+}
+
+.register-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+}
+
+.register-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.button:hover {
-    background-color: #fff;
-    color: #61dafb;
+.register-form button:hover {
+    background-color: #45a049;
 }
 
-/* Formularze */
-form {
-    max-width: 600px;
-    margin: 20px auto;
+/* Add Movie Review Page */
+.add-movie-form {
+    text-align: center;
+    margin-top: 20px;
 }
 
-label {
+.add-movie-form label {
     display: block;
-    margin-bottom: 8px;
+    margin: 10px 0;
+    color: #555;
 }
 
-input, textarea {
+.add-movie-form input,
+.add-movie-form textarea,
+.add-movie-form select {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    margin: 5px 0;
     box-sizing: border-box;
-    background-color: #333;
-    color: #fff;
 }
 
-/* Tabela */
-table {
+.add-movie-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-movie-form button:hover {
+    background-color: #45a049;
+}
+
+/* Home Site Page */
+.button a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.button a:hover {
+    text-decoration: underline;
+}
+
+/* Instruction Page */
+.button button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button button:hover {
+    background-color: #45a049;
+}
+
+/* Login Page */
+.login-form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-form label {
+    display: block;
+    margin: 10px 0;
+    color: #555;
+}
+
+.login-form input {
     width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
 }
 
-th, td {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid #444;
+.login-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-th {
-    background-color: #333;
-    color: #61dafb;
+.login-form button:hover {
+    background-color: #45a049;
 }
 
-tr:nth-child(even) {
-    background-color: #444;
+/* MovieHub Page */
+.button button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        width: 90%;
-    }
+.button button:hover {
+    background-color: #45a049;
 }

@@ -7,6 +7,7 @@
 </head>
 <body>
 <h2>Login Page</h2>
+<div class="login-form">
 <form th:action="@{/login}" method="post">
     <label for="username">Username:</label>
     <input type="text" id="username" name="username" required autofocus/><br/>
@@ -16,6 +17,7 @@
 
     <button type="submit">Login</button>
 </form>
+</div>
 <br>
 <p>Haven't got account yet? Register <a th:href="@{/register}">Here</a> </p>
 <br>

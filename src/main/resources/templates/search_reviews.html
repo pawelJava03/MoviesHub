@@ -3,7 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Search Reviews</title>
-    <link rel="stylesheet" type="text/css" href="search.css">
+    <style>
+        /* Dodaj swoje style CSS tutaj */
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .reviews-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .reviews-table th, .reviews-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+    </style>
 </head>
 <body>
 <h1>Search Reviews by Title</h1>
@@ -17,9 +56,9 @@
 <div th:if="${noResults}">
     <p>No reviews found for the given title.</p>
 </div>
-
-<div th:if="${movies}">
-    <table>
+<
+<div th:if="${movies}" class="reviews-table">
+    <table class="reviews-table">
         <thead>
         <tr>
             <th>Title</th>
@@ -41,6 +80,8 @@
     </table>
 </div>
 
-<a th:href="@{/moviehub}">Back to MovieHub</a>
+<div class="button">
+    <button type="button" onclick="window.location.href='/moviehub'">Back to the moviehub</button>
+</div>
 </body>
 </html>

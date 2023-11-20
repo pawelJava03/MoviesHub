@@ -3,11 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Your Reviews</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .reviews-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .reviews-table th, .reviews-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+    </style>
 </head>
 <body>
-<header>Yours reviews</header>
-
-<table>
+<h1>Yours reviews</h1>
+<table class="reviews-table">
     <thead>
     <tr>
         <th>Title</th>
@@ -18,18 +56,17 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="allByNicknames: ${allByNickname}">
-        <td th:text="${allByNicknames.title}"></td>
-        <td th:text="${allByNicknames.date}"></td>
-        <td th:text="${allByNicknames.rating}"></td>
-        <td th:text="${allByNicknames.review}"></td>
-        <td th:text="${allByNicknames.addedby}"></td>
+    <tr th:each="review : ${allByNickname}">
+        <td th:utext="${review.title}"></td>
+        <td th:utext="${review.date}"></td>
+        <td th:utext="${review.rating}"></td>
+        <td th:utext="${review.review}"></td>
+        <td th:utext="${review.addedby}"></td>
     </tr>
     </tbody>
 </table>
-
-<button type="button" onclick="window.location.href='/moviehub'">Back to MovieHub</button>
-
-
+<div class="button">
+    <button class="back-button" type="button" onclick="window.location.href='/moviehub'">Back to MovieHub</button>
+</div>
 </body>
 </html>

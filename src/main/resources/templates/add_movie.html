@@ -8,7 +8,7 @@
 <body>
 
 <h2>Add Movie Review</h2>
-
+   <div class="add-movie-form">
 <form th:action="@{/movie-review}" th:object="${movie}" method="post">
     <label for="title">Title:</label>
     <input type="text" id="title" name="title" th:field="*{title}" required>
@@ -31,11 +31,12 @@
 
     <button type="submit">Submit Review</button>
 </form>
-
+   </div>
+    <div class="button">
 <form>
     <button type="button" onclick="window.location.href='/moviehub'">Back to MovieHub</button>
 </form>
-
+    </div>
 
 
 </body>
