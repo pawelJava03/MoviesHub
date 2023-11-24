@@ -11,7 +11,6 @@ body {
     height: 100vh;
 }
 
-/* Common styling for forms */
 form {
     max-width: 400px;
     margin: auto;
@@ -26,7 +25,6 @@ h2 {
     margin-top: 20px;
 }
 
-/* Registration Page */
 .register-form {
     text-align: center;
     margin-top: 20px;
@@ -58,7 +56,6 @@ h2 {
     background-color: #45a049;
 }
 
-/* Add Movie Review Page */
 .add-movie-form {
     text-align: center;
     margin-top: 20px;
@@ -92,7 +89,6 @@ h2 {
     background-color: #45a049;
 }
 
-/* Home Site Page */
 .button a {
     text-decoration: none;
     color: #4CAF50;
@@ -103,7 +99,6 @@ h2 {
     text-decoration: underline;
 }
 
-/* Instruction Page */
 .button button {
     background-color: #4CAF50;
     color: white;
@@ -117,7 +112,6 @@ h2 {
     background-color: #45a049;
 }
 
-/* Login Page */
 .login-form {
     text-align: center;
     margin-top: 20px;
@@ -149,7 +143,6 @@ h2 {
     background-color: #45a049;
 }
 
-/* MovieHub Page */
 .button button {
     background-color: #4CAF50;
     color: white;
